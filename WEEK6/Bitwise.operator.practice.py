@@ -1,0 +1,13 @@
+
+print(8756 << 5)
+print(87  << 6)
+print(4532344 >> 8)
+print(78 >> 3)
+print(7894 & 975)
+print(45 & 1101101)
+print(634 | 4578)
+print(1010101 | 101010)
+print(~87)
+print(~6)
+print(32 ^15)
+print(154 ^ 35)

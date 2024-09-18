@@ -14,18 +14,49 @@ auth = {
     "Pascal":"2345",
 }
 
-print("Please enter your authentication info")
-username = input("Enter your Username: ").capitalize()
-password = input("Enter your Password: ")
+def caseRecord():
 
-"""if username in auth.keys() and password in auth.values():
-    print(f"Welcome {username}!")
-    print("Authentification Success!")"""
-#here i tried tuples to use the items built in function for dictionaries, and match key and value at the same time
-data = (username,password)
-if data in auth.items():
-    print(f"Welcome {username}!")
-    print("Authentification Success!")
+    while True:    
 
-for i in auth.keys():
-    
+        print("Please enter your authentication info")
+        username = input("Enter your Username: ").capitalize()
+        password = input("Enter your Password: ")
+
+        """if username in auth.keys() and password in auth.values():
+            print(f"Welcome {username}!")
+            print("Authentification Success!")"""
+        #here i tried tuples to use the items built in function for dictionaries, and match key and value at the same time
+
+        
+
+        if (username,password) in auth.items():
+            print(f"Welcome {username}!")
+            print("Authentification Success!")
+
+            while True:
+                print("Menu")
+                opt = input("A.Add user B.Remove C.Leave:  ").capitalize()
+
+
+                if opt == "A": 
+                    NewUser  = input("Enter the New User: ")
+                    NewPass  = input("Enter the Password: ") 
+                    
+                    auth.update({NewUser:NewPass})
+                    print(f"The updated Cases's List is {auth}")
+                elif opt== "B":
+                    print(f"The Cases's List is {auth}")
+                    keyU = input("Enter the User to Remove: ").capitalize()
+                    auth.pop(keyU)
+                    print(f"The new Cases's List is {auth}")
+
+                elif opt== "B":
+                    break
+                else:
+                    print("There is an error!")
+        
+        else:
+                print("Information not Valid!")
+
+
+caseRecord()
